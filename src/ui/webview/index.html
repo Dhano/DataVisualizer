@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="description" content="">
+  <meta name="author" content="">
+
+  <title>Bare - Start Bootstrap Template</title>
+
+  <!-- Bootstrap core CSS -->
+  <link href="webview/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+
+</head>
+
+<body>
+
+  <!-- Navigation -->
+  <nav class="navbar navbar-expand-lg navbar-dark bg-dark static-top">
+    <div class="container">
+      <a class="navbar-brand" href="#">Start Bootstrap</a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarResponsive">
+        <ul class="navbar-nav ml-auto">
+          <li class="nav-item active">
+            <a class="nav-link" href="#">Home
+              <span class="sr-only">(current)</span>
+            </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">About</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">Services</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">Contact</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Page Content -->
+  <br>
+  <div class="container">
+    <div class="row">
+      <div class="col-md-12 text-center">
+        <h1 id="contents"></h1>
+        <input type="text" class="form-control" placeholder="URL">
+      </div>
+    </div>
+    <br>
+    <div class="row">
+      <div class="col-md-6 text-center">
+        <input type="text" class="form-control" placeholder="Email">
+      </div>
+      <div class="col-md-6 text-center">
+        <input type="password" class="form-control" placeholder="Password">
+      </div>
+    </div>
+
+    <br>
+    <div class="row">
+      <div class="col-md-12">
+        <ul id="tabs" class="nav nav-tabs">
+          <li class="nav-item"><a href="" data-target="#home1" data-toggle="tab" class="nav-link small text-uppercase">Channels</a></li>
+          <li class="nav-item"><a href="" data-target="#profile1" data-toggle="tab" class="nav-link small text-uppercase active">Profile</a></li>
+          <li class="nav-item"><a href="" data-target="#messages1" data-toggle="tab" class="nav-link small text-uppercase">Messages</a></li>
+        </ul>
+        <br>
+        <div id="tabsContent" class="tab-content">
+          <div id="home1" class="tab-pane fade">
+            <div class="list-group" id="channels">
+            </div>
+          </div>
+
+          <div id="profile1" class="tab-pane fade active show">
+            <div class="list-group">
+              <a href="" class="list-group-item d-inline-block"><span class="float-right badge badge-pill badge-dark">51</span> Home Link</a>
+              <a href="" class="list-group-item d-inline-block"><span class="float-right badge badge-pill badge-dark">8</span> Link 2</a>
+              <a href="" class="list-group-item d-inline-block"><span class="float-right badge badge-pill badge-dark">23</span> Link 3</a>
+              <a href="" class="list-group-item d-inline-block text-muted">Link n..</a>
+            </div>
+          </div>
+
+          <div id="messages1" class="tab-pane fade">
+            <div class="list-group">
+              <a href="" class="list-group-item d-inline-block"><span class="float-right badge badge-pill badge-dark">51</span> Home Link</a>
+              <a href="" class="list-group-item d-inline-block"><span class="float-right badge badge-pill badge-dark">8</span> Link 2</a>
+              <a href="" class="list-group-item d-inline-block"><span class="float-right badge badge-pill badge-dark">23</span> Link 3</a>
+              <a href="" class="list-group-item d-inline-block text-muted">Link n..</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <button onclick="app.get()"></button>
+
+  <!-- Bootstrap core JavaScript -->
+  <script src="webview/vendor/jquery/jquery.slim.min.js"></script>
+  <script src="webview/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+  <script>
+    function init(){
+      $("#contents").text(window.app.getChannels().size());
+      var list=window.app.getChannels();
+      for (var i=0; i<list.size(); i++)
+        $("#channels").append('<a href="" class="list-group-item d-inline-block"><span class="float-right badge badge-pill badge-dark">51</span>'+list.get(i)+'</a>');
+
+    }
+
+  </script>
+
+
+</body>
+
+</html>
